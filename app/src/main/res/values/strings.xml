@@ -6,4 +6,5 @@
     <string name="student">Student</string>
     <string name="teacher">Teacher</string>
     <string name="admin">Admin</string>
+    <string name="o">O %</string>
 </resources>
