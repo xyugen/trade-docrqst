@@ -3,4 +3,7 @@
     <string name="login">Login</string>
     <string name="deped_logo">DepEd Logo</string>
     <string name="trade_logo">Trade Logo</string>
+    <string name="student">Student</string>
+    <string name="teacher">Teacher</string>
+    <string name="admin">Admin</string>
 </resources>
