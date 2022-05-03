@@ -30,9 +30,7 @@ public class ProgressBarAnimation extends Animation {
         super.applyTransformation(interpolatedTime, t);
         float value = from + (to - from) * interpolatedTime;
         progressBar.setProgress((int)value);
-        String loadnum = String.format(Locale.US,"%1f %%", value);
-        textView.setText(loadnum);
-
+        textView.setText((int)value+"%");
         if (value == to){
             context.startActivity(new Intent(context, LoginActivity.class));
         }

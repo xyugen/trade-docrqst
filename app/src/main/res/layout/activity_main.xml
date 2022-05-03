@@ -8,19 +8,20 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/o"
-        android:textColor="#fff"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/progress_bar" />
 
 
     <ProgressBar
+        android:id="@+id/progress_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/progress_bar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"/>
