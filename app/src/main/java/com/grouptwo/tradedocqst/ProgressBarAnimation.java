@@ -1,4 +1,4 @@
-package com.example.tradedocqst;
+package com.grouptwo.tradedocqst;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,8 +6,6 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import java.util.Locale;
 
 public class ProgressBarAnimation extends Animation {
 

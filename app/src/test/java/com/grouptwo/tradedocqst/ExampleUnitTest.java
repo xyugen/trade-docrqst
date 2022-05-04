@@ -1,4 +1,4 @@
-package com.example.tradedocqst;
+package com.grouptwo.tradedocqst;
 
 import org.junit.Test;
 
