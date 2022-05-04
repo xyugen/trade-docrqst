@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-anydpi-v26/ic_docrqst_logo.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/docrqst_logo.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/ic_docrqst_logo.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/ic_teacher_icon.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1535" />
@@ -11,6 +14,7 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.18885869565217392" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1535" />
       </map>
     </option>
   </component>
