@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/sjdmnts_logo" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button"
         android:layout_width="271dp"
         android:layout_height="81dp"
@@ -49,6 +49,7 @@
         android:layout_marginBottom="27dp"
         android:text="@string/student"
         android:textSize="30sp"
+        app:icon="@drawable/ic_student_icon"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -62,6 +63,7 @@
         android:layout_marginBottom="29dp"
         android:text="@string/teacher"
         android:textSize="30sp"
+        app:icon="@drawable/ic_teacher_icon"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -75,6 +77,7 @@
         android:layout_marginBottom="103dp"
         android:text="@string/admin"
         android:textSize="30sp"
+        app:icon="@drawable/ic_admin_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
