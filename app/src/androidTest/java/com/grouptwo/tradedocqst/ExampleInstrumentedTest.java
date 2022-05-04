@@ -1,4 +1,4 @@
-package com.example.tradedocqst;
+package com.grouptwo.tradedocqst;
 
 import android.content.Context;
 
