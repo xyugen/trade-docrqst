@@ -12,35 +12,14 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/jetbrainsmono_regular"
         android:text="@string/login"
-        android:textSize="48sp"
+        android:textSize="64sp"
+        android:textColor="?android:textColorPrimary"
         app:fontFamily="@font/jetbrainsmono_regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.166" />
-
-    <ImageView
-        android:id="@+id/imgDepedLogo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/deped_logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/deped_logo" />
-
-    <ImageView
-        android:id="@+id/imgTradeLogo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/trade_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sjdmnts_logo" />
 
     <Button
         android:id="@+id/btnStudent"

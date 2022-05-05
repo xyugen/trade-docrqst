@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/jetbrainsmono_regular"
         android:text="@string/o"
-        android:textColor="@color/white"
+        android:textColor="?android:textColorPrimary"
         android:textSize="25sp" />
 
 
@@ -69,9 +69,9 @@
         android:layout_marginTop="468dp"
         android:fontFamily="@font/jetbrainsmono_regular"
         android:gravity="center_horizontal|top"
-        android:lineHeight="33sp"
         android:text="@string/app_desc"
         android:textSize="25sp"
+        android:textColor="?android:textColorPrimary"
         app:fontFamily="@font/jetbrainsmono_regular" />
 
 </RelativeLayout>
