@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TradeDocumentRequest" >
         <activity
-            android:name="com.grouptwo.tradedocqst.LoginActivity"
+            android:name="com.grouptwo.tradedocqst.UserLoginActivity"
             android:exported="false" />
         <activity
             android:name="com.grouptwo.tradedocqst.MainActivity"

@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/jetbrainsmono_regular"
         android:text="@string/login"
-        android:textColor="@color/white"
         android:textSize="48sp"
         app:fontFamily="@font/jetbrainsmono_regular"
         app:layout_constraintBottom_toBottomOf="parent"

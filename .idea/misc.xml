@@ -11,8 +11,9 @@
         <entry key="app/src/main/res/drawable/ic_teacher_icon.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1535" />
         <entry key="app/src/main/res/font/jetbrainsmono.xml" value="0.28425925925925927" />
+        <entry key="app/src/main/res/layout-v28/activity_main.xml" value="0.1453804347826087" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.9" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1535" />
       </map>

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/sjdmnts_bg"
-    android:backgroundTint="#ccd5e3cc"
-    android:backgroundTintMode="add"
     tools:context=".MainActivity">
 
     <TextView
@@ -28,5 +26,51 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="-1dp"
+        android:contentDescription="@string/deped_logo"
+        app:srcCompat="@drawable/deped_logo" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="1dp"
+        android:contentDescription="@string/trade_logo"
+        app:srcCompat="@drawable/sjdmnts_logo" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="226dp"
+        android:layout_height="261dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="67dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="203dp"
+        android:contentDescription="app logo"
+        app:srcCompat="@drawable/docrqst_icon" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="468dp"
+        android:fontFamily="@font/jetbrainsmono_regular"
+        android:gravity="center_horizontal|top"
+        android:lineHeight="33sp"
+        android:text="@string/app_desc"
+        android:textSize="25sp" />
 
 </RelativeLayout>
