@@ -19,7 +19,7 @@
         android:layout_marginTop="93dp"
         android:gravity="center"/>
 
-    <EditText
+    <!-- <com.google.android.material.textfield.TextInputLayout
         android:layout_width="262dp"
         android:layout_height="45dp"
         android:layout_alignParentStart="true"
@@ -29,10 +29,24 @@
         android:background="#343434"
         android:fontFamily="@font/jetbrainsmono_regular"
         android:paddingStart="14dp"
-        android:hint="Email"
+        android:hint="@string/prompt_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:textColorHint="@color/white"
         app:boxStrokeColor="@color/white"
+        /> -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtTxtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        app:helperText="@string/prompt_email"
+        app:helperTextTextColor="@color/white"
+        app:boxStrokeColor="@color/purple_200"
+        app:boxStrokeWidth="2dp"
+        app:startIconDrawable="@drawable/ic_student_icon"
+        app:startIconTint="@color/white"
         />
 
 
