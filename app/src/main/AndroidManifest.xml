@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TradeDocumentRequest" >
         <activity
-            android:name="com.grouptwo.tradedocqst.UserLoginActivity"
+            android:name=".UserLoginActivity"
             android:exported="false" />
         <activity
-            android:name="com.grouptwo.tradedocqst.MainActivity"
+            android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

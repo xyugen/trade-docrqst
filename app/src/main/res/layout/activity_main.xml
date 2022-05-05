@@ -11,12 +11,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/o"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:fontFamily="@font/jetbrainsmono_regular"
+        android:layout_above="@+id/progress_bar"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/progress_bar" />
+        android:fontFamily="@font/jetbrainsmono_regular"
+        android:text="@string/o"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
 
 
     <ProgressBar
@@ -54,8 +54,8 @@
         android:layout_width="226dp"
         android:layout_height="261dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="67dp"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="203dp"
         android:contentDescription="app logo"
         app:srcCompat="@drawable/docrqst_icon" />
@@ -71,6 +71,7 @@
         android:gravity="center_horizontal|top"
         android:lineHeight="33sp"
         android:text="@string/app_desc"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        app:fontFamily="@font/jetbrainsmono_regular" />
 
 </RelativeLayout>
