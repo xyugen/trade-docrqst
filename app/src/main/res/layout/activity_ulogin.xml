@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/jetbrainsmono_regular"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.166" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgDepedLogo"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/deped_logo" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgTradeLogo"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
@@ -43,7 +43,7 @@
         app:srcCompat="@drawable/sjdmnts_logo" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnStudent"
         android:layout_width="271dp"
         android:layout_height="81dp"
         android:layout_marginStart="89dp"
@@ -53,12 +53,12 @@
         android:textSize="30sp"
         app:cornerRadius="15dp"
         app:icon="@drawable/ic_student_icon"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btnTeacher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnTeacher"
         android:layout_width="271dp"
         android:layout_height="81dp"
         android:layout_marginStart="89dp"
@@ -68,12 +68,12 @@
         android:textSize="30sp"
         app:cornerRadius="15dp"
         app:icon="@drawable/ic_teacher_icon"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdmin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnAdmin"
         android:layout_width="271dp"
         android:layout_height="81dp"
         android:layout_marginStart="89dp"
