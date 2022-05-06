@@ -19,4 +19,6 @@
     <string name="login_failed">"Login failed"</string>
     <string name="student_login">\nLogin</string>
     <string name="c_login">LOGIN</string>
+    <string name="c_sign_up">Sign Up</string>
+    <string name="forgot_pass_q">Forgot your password?</string>
 </resources>
