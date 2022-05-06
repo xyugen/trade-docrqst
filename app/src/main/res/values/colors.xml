@@ -12,4 +12,5 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="turquoise">#30d5c8</color>
+    <color name="red">#FF4444</color>
 </resources>
