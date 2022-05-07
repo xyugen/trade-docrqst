@@ -7,22 +7,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class UserLoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class UserSelectActivity extends AppCompatActivity implements View.OnClickListener{
 
     // creating the user buttons
     Button btnStudent, btnTeacher, btnAdmin;
 
     public void btnUser(String user){
-        Intent myIntent = new Intent(UserLoginActivity.this, LoginActivity.class);
+        Intent myIntent = new Intent(UserSelectActivity.this, LoginActivity.class);
 
         myIntent.putExtra("user_group", user); // Parameters
-        UserLoginActivity.this.startActivity(myIntent);
+        UserSelectActivity.this.startActivity(myIntent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ulogin);
+        setContentView(R.layout.activity_uselect);
 
         // connecting buttons
         btnStudent = findViewById(R.id.btnStudent);
