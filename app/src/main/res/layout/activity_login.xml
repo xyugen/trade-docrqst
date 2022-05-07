@@ -15,7 +15,7 @@
         android:layout_marginTop="100dp"
         android:fontFamily="@font/jetbrainsmono_regular"
         android:gravity="center"
-        android:text="@string/student_login"
+        android:text="@string/user_login"
         android:textColor="?android:textColorPrimary"
         android:textSize="66sp"
         app:layout_constraintStart_toStartOf="parent"
