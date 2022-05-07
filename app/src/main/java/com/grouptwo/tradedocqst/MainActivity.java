@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         progressBar.setScaleY(3f);
 
         progressAnimation();
-        // TODO finish activity
     }
 
     public void progressAnimation(){
