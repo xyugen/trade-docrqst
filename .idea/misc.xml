@@ -3,9 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Teacher/AndroidStudioProjects/trade-docrqst/app/src/main/res/drawable/ic_admin_icon.xml" value="0.1725" />
-        <entry key="..\:/Users/Teacher/AndroidStudioProjects/trade-docrqst/app/src/main/res/layout/activity_login.xml" value="0.30085470085470084" />
-        <entry key="..\:/Users/Teacher/AndroidStudioProjects/trade-docrqst/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Teacher/AndroidStudioProjects/trade-docrqst/app/src/main/res/layout/activity_main.xml" value="0.27870370370370373" />
         <entry key="app/src/main/res/drawable-anydpi-v26/ic_docrqst_logo.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/docrqst_logo.xml" value="0.1535" />
