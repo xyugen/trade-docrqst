@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TradeDocumentRequest">
         <activity
+            android:name=".DocReq"
+            android:exported="false" />
+        <activity
+            android:name=".SecQuestActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity

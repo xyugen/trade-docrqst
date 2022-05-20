@@ -70,8 +70,8 @@
         android:fontFamily="@font/jetbrainsmono_regular"
         android:gravity="center_horizontal|top"
         android:text="@string/app_desc"
-        android:textSize="25sp"
         android:textColor="?android:textColorPrimary"
+        android:textSize="25sp"
         app:fontFamily="@font/jetbrainsmono_regular" />
 
 </RelativeLayout>
