@@ -13,7 +13,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="100dp"
-        android:fontFamily="@font/jetbrainsmono_regular"
         android:gravity="center"
         android:text="@string/user_signup"
         android:textColor="?android:textColorPrimary"
@@ -41,7 +40,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/jetbrainsmono_regular"
             android:textColorHint="#546E7A"
             android:maxLines="1"
             android:inputType="textPersonName" />
@@ -68,7 +66,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/jetbrainsmono_regular"
             android:textColorHint="#546E7A"
             android:maxLines="1"
             android:inputType="textEmailAddress" />
@@ -96,7 +93,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/jetbrainsmono_regular"
             android:textColorHint="#546E7A"
             android:maxLines="1"
             android:inputType="textPassword" />
@@ -109,7 +105,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:fontFamily="@font/jetbrainsmono_regular"
         android:text="@string/c_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtTxtSignUpPassword" />
@@ -120,7 +115,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
-        android:fontFamily="@font/jetbrainsmono_regular"
         android:text="@string/back"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         app:layout_constraintEnd_toStartOf="@+id/btnSUNext"
@@ -133,7 +127,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="@string/forgot_pass_q"
-        android:fontFamily="@font/jetbrainsmono_regular"
         android:textSize="12sp"
         android:textColor="?colorSecondaryVariant"
         app:layout_constraintBottom_toBottomOf="parent"
