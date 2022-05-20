@@ -7,7 +7,7 @@
     <string name="teacher">Teacher</string>
     <string name="admin">Admin</string>
     <string name="o">O%</string>
-    <string name="app_desc">SJDMNTS\n Document Request</string>
+    <string name="app_desc">Document Request</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
