@@ -32,4 +32,5 @@
     <string name="document_request">Document\nRequest</string>
     <string name="next">Next</string>
     <string name="certificate_of_enrollment">Certificate of Enrollment</string>
+    <string name="app_logo">app logo</string>
 </resources>
