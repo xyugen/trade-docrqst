@@ -7,7 +7,7 @@
     tools:context=".DocReq">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txtDocRqst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/chkForm173"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -29,57 +29,57 @@
         android:text="@string/form_137"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDocRqst" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/chkForm138"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:text="@string/certified_copy_of_form_138"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/chkForm173" />
 
     <CheckBox
-        android:id="@+id/checkBox8"
+        android:id="@+id/chkUpPer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:text="@string/upper_percent"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox6" />
+        app:layout_constraintTop_toBottomOf="@+id/chkForm138" />
 
     <CheckBox
-        android:id="@+id/checkBox9"
+        android:id="@+id/chkGoodMoral"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:text="@string/good_moral"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
+        app:layout_constraintTop_toBottomOf="@+id/chkUpPer" />
 
     <CheckBox
-        android:id="@+id/checkBox10"
+        android:id="@+id/chkCOE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:text="@string/certificate_of_enrollment"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox9" />
+        app:layout_constraintTop_toBottomOf="@+id/chkGoodMoral" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnDocRqstNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="16dp"
         android:text="@string/next"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox9" />
+        app:layout_constraintTop_toBottomOf="@+id/chkCOE" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
