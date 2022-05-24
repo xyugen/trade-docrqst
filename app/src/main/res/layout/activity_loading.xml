@@ -8,7 +8,7 @@
     android:background="@drawable/sjdmnts"
     android:backgroundTint="#4DFFFFFF"
     android:backgroundTintMode="src_over"
-    tools:context=".MainActivity">
+    tools:context=".LoadingActivity">
 
     <TextView
         android:id="@+id/textView"

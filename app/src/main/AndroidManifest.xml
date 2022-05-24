@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TradeDocumentRequest">
         <activity
-            android:name=".DocReq"
+            android:name=".DocReqActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
@@ -24,7 +24,7 @@
             android:name=".UserSelectActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoadingActivity"
             android:exported="true"
             android:noHistory="true">
             <intent-filter>
