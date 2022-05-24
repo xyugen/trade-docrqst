@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="@drawable/background">
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/txtUsrLogin"
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="85dp"
         android:gravity="center"
         android:text="@string/user_login"
         android:textColor="?android:textColorPrimary"
@@ -27,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="173dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/prompt_email"
         android:radius="30dp"
@@ -85,15 +84,28 @@
         app:layout_constraintTop_toBottomOf="@+id/edtTxtLoginPassword" />
 
     <Button
-        android:id="@+id/btnSignUp"
+        android:id="@+id/btnBack"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/c_sign_up"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        app:layout_constraintEnd_toStartOf="@+id/btnLogin"
+        android:layout_marginEnd="14dp"
+        android:text="@string/back"
+        app:layout_constraintEnd_toStartOf="@id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/edtTxtLoginPassword" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/c_sign_up"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnForgotPasswd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnForgotPasswd"
@@ -102,8 +114,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="@string/forgot_pass_q"
-        android:textSize="12sp"
         android:textColor="?colorSecondaryVariant"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
