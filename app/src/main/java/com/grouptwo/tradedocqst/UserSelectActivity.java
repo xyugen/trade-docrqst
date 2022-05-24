@@ -56,17 +56,18 @@ public class UserSelectActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
+    @Override
     public  void onClick(View v) {
         int id = v.getId();
         UserGroup userGroup = null;
         if(id == R.id.btnStudent) {
-            userGroup = new UserGroup(0, "Student");
+            userGroup = new UserGroup(1, "Student");
         }
         else if(id == R.id.btnTeacher) {
-            userGroup = new UserGroup(1, "Teacher");
+            userGroup = new UserGroup(2, "Teacher");
         }
         else if(id == R.id.btnAdmin) {
-            userGroup = new UserGroup(2, "Admin");
+            userGroup = new UserGroup(3, "Admin");
         }
 
         SessionManagement sessionManagement = new SessionManagement(UserSelectActivity.this);

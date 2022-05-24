@@ -20,7 +20,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         // connecting buttons
         btnSUNext = findViewById(R.id.btnSUNext);
-        btnBack = findViewById(R.id.btnBack);
+        btnBack = findViewById(R.id.btnBackLogin);
         btnForgotPW = findViewById(R.id.btnForgotPasswd);
 
         // apply onClick Listener
@@ -37,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
             finish();
         }
-        else if(id == R.id.btnBack) {
+        else if(id == R.id.btnBackLogin) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
