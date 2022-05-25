@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.RelativeSizeSpan;
+import android.util.Size;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.MessageFormat;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,6 +34,23 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         btnSUNext.setOnClickListener(this);
         btnBack.setOnClickListener(this);
         btnForgotPW.setOnClickListener(this);
+
+        txtUserGroup();
+    }
+
+    private void txtUserGroup() {
+        SessionManagement sessionManagement = new SessionManagement(SignUpActivity.this);
+        String userGroup = sessionManagement.getGroup();
+
+        TextView txtUsrSignUp = findViewById(R.id.txtUsrSignUp);
+        txtUsrSignUp.setText(MessageFormat.format("{0}\nSign Up", userGroup));
+
+        /* SpannableString spannableString = new SpannableString((CharSequence) txtUsrSignUp);
+        spannableString.setSpan(
+                new RelativeSizeSpan(1.2f), txtUsrSignUp.length() -7, txtUsrSignUp.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        );
+
+        txtUsrSignUp.setText(spannableString); */
     }
 
     @Override
