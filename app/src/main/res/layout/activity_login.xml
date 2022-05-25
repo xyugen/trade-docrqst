@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="@string/user_login"
         android:textColor="?android:textColorPrimary"
-        android:textSize="66sp"
+        android:textSize="62sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/prompt_email"
         android:radius="30dp"
