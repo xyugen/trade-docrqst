@@ -10,12 +10,14 @@
         android:id="@+id/txtDocRqst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="30dp"
         android:fontFamily="@font/jetbrainsmono_bold"
-        android:text="@string/document_request"
-        android:textSize="50sp"
         android:gravity="center"
+        android:text="@string/document_request"
         android:textColor="?android:textColorPrimary"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/chkForm173"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,61 +27,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/form_137"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDocRqst" />
+        app:layout_constraintBottom_toTopOf="@id/chkForm138"
+        tools:layout_editor_absoluteY="400dp" />
 
     <CheckBox
         android:id="@+id/chkForm138"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/certified_copy_of_form_138"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkForm173" />
+        app:layout_constraintBottom_toTopOf="@id/chkUpPer" />
 
     <CheckBox
         android:id="@+id/chkUpPer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/upper_percent"
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkForm138" />
+        app:layout_constraintBottom_toTopOf="@+id/chkGoodMoral"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/chkGoodMoral"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
+        android:layout_marginBottom="5dp"
         android:text="@string/good_moral"
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkUpPer" />
+        app:layout_constraintBottom_toTopOf="@+id/chkCOE"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/chkCOE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/certificate_of_enrollment"
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkGoodMoral" />
+        app:layout_constraintBottom_toTopOf="@+id/btnDocRqstNext"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnDocRqstNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/next"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkCOE" />
+        tools:layout_editor_absoluteY="723dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
