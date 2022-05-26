@@ -12,11 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="85dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:text="@string/user_login"
         android:textColor="?android:textColorPrimary"
         android:textSize="62sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtTxtLoginEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,23 +27,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="160dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="10dp"
         android:hint="@string/prompt_email"
         android:radius="30dp"
         app:boxBackgroundColor="?colorSecondary"
         app:boxStrokeColor="?colorPrimary"
         app:boxStrokeWidth="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtTxtLoginPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsrLogin">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#546E7A"
+            android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:inputType="textEmailAddress" />
+            android:textColorHint="#546E7A" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,24 +53,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="31dp"
         android:layout_marginEnd="24dp"
-        android:maxWidth="262dp"
+        android:layout_marginBottom="30dp"
         android:hint="@string/prompt_password"
+        android:maxWidth="262dp"
         android:radius="30dp"
         app:boxBackgroundColor="?colorSecondary"
         app:boxStrokeColor="?colorPrimary"
         app:boxStrokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtTxtLoginEmail">
+        app:layout_constraintBottom_toTopOf="@id/btnLogin"
+        tools:layout_editor_absoluteY="491dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#546E7A"
+            android:inputType="textPassword"
             android:maxLines="1"
-            android:inputType="textPassword" />
+            android:textColorHint="#546E7A" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,22 +79,22 @@
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/c_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtTxtLoginPassword" />
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnBackLogin"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="14dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/back"
-        app:layout_constraintEnd_toStartOf="@id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/edtTxtLoginPassword" />
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
+        app:layout_constraintEnd_toStartOf="@id/btnLogin" />
 
     <Button
         android:id="@+id/btnSignUp"
