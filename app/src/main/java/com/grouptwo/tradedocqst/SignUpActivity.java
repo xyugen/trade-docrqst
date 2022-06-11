@@ -1,5 +1,6 @@
 package com.grouptwo.tradedocqst;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,20 +10,31 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.MessageFormat;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
-    // Creating buttons
+    // Creating elements
     Button btnSUNext, btnBack, btnForgotPW;
     TextInputEditText edtLRN, edtEmail, edtPass;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        // firebase
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
         // connecting text fields and buttons
         edtLRN = findViewById(R.id.edtTxtSignUpLRN);
@@ -36,8 +48,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         btnSUNext.setOnClickListener(this);
         btnBack.setOnClickListener(this);
         btnForgotPW.setOnClickListener(this);
-
-        // validate fields
 
         txtUserGroup();
     }
@@ -67,7 +77,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             }
         }
 
-
         return true;
     }
 
@@ -76,9 +85,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         int id = v.getId();
         if(id == R.id.btnSUNext) {
             if (validate(edtLRN, false) && validate(edtEmail, false) && validate(edtPass, true)) {
-                Intent intent = new Intent(this, SignUpActivity.class);
-                startActivity(intent);
-                finish();
+                // start the user registration process
+                fAuth.createUserWithEmailAndPassword(edtEmail.getText().toString(), edtPass.getText().toString()).addOnSuccessListener(authResult -> {
+                    Toast.makeText(SignUpActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
+
+                    startActivity(new Intent(getApplicationContext(),DocReqActivity.class));
+                    finish();
+                }).addOnFailureListener(e -> Toast.makeText(SignUpActivity.this, "Failed to Create Account", Toast.LENGTH_SHORT).show());
             }
         }
         else if(id == R.id.btnBackLogin) {
