@@ -1,6 +1,5 @@
 package com.grouptwo.tradedocqst;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,14 +9,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.MessageFormat;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -87,7 +87,17 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             if (validate(edtLRN, false) && validate(edtEmail, false) && validate(edtPass, true)) {
                 // start the user registration process
                 fAuth.createUserWithEmailAndPassword(edtEmail.getText().toString(), edtPass.getText().toString()).addOnSuccessListener(authResult -> {
+                    FirebaseUser user = fAuth.getCurrentUser();
                     Toast.makeText(SignUpActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
+                    DocumentReference df = fStore.collection("Users").document(user.getUid());
+                    Map<String,Object> userInfo = new HashMap<>();
+                    userInfo.put("LRN",edtLRN.getText().toString());
+                    userInfo.put("UserEmail",edtEmail.toString());
+
+                    // specify of the user is admin/teacher
+                    userInfo.put("isTeacher","0");
+
+                    df.set(userInfo);
 
                     startActivity(new Intent(getApplicationContext(),DocReqActivity.class));
                     finish();
