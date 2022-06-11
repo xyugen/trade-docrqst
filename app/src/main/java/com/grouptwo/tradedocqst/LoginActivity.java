@@ -9,19 +9,24 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.text.MessageFormat;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     // Creating buttons
     Button btnLogin, btnBackLogin, btnSignUp, btnForgotPW;
+    TextInputEditText edtEmail, edtPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // connecting buttons
+        // connecting fields & buttons
+        edtEmail = findViewById(R.id.edtTxtLoginEmail);
+        edtPass = findViewById(R.id.edtTxtLoginPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnBackLogin = findViewById(R.id.btnBackLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
@@ -55,8 +60,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
 
         if(id == R.id.btnLogin) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Clicked login!", Toast.LENGTH_SHORT);
-            toast.show();
+            if (SignUpActivity.validate(edtEmail, false) && SignUpActivity.validate(edtPass, true)) {
+                Intent intent = new Intent(this, DocReqActivity.class);
+                startActivity(intent);
+                finish();
+            }
         }
         else if(id == R.id.btnBackLogin){
             sessionManagement.removeSession();

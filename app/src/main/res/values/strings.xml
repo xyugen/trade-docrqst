@@ -33,4 +33,6 @@
     <string name="next">Next</string>
     <string name="certificate_of_enrollment">Certificate of Enrollment</string>
     <string name="app_logo">app logo</string>
+    <string name="lrn">Learner\'s Reference Number</string>
+    <string name="a_lrn">LRN</string>
 </resources>
