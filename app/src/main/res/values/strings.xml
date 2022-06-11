@@ -18,7 +18,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="user_login">\nLogin</string>
-    <string name="c_login">LOGIN</string>
+    <string name="c_login">Login</string>
     <string name="c_sign_up">Sign Up</string>
     <string name="forgot_pass_q">Forgot your password?</string>
     <string name="user_signup">\nSign Up</string>

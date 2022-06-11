@@ -39,9 +39,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void txtUserGroup() {
         SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
         String userGroup = sessionManagement.getGroup();
+        String page = getResources().getString(R.string.c_login);
 
         TextView txtUsrLogin = findViewById(R.id.txtUsrLogin);
-        txtUsrLogin.setText(MessageFormat.format("{0}\nLogin", userGroup));
+        txtUsrLogin.setText(MessageFormat.format("{0}\n{1}", userGroup, page));
 
         if(!userGroup.equals("Student")){
             btnSignUp.setVisibility(View.INVISIBLE);

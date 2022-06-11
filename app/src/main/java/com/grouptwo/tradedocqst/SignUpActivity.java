@@ -4,12 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.RelativeSizeSpan;
-import android.util.Size;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +16,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     // Creating buttons
     Button btnSUNext, btnBack, btnForgotPW;
+    EditText findSu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +39,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private void txtUserGroup() {
         SessionManagement sessionManagement = new SessionManagement(SignUpActivity.this);
         String userGroup = sessionManagement.getGroup();
+        String page = getResources().getString(R.string.c_sign_up);
 
         TextView txtUsrSignUp = findViewById(R.id.txtUsrSignUp);
-        txtUsrSignUp.setText(MessageFormat.format("{0}\nSign Up", userGroup));
-
-        /* SpannableString spannableString = new SpannableString((CharSequence) txtUsrSignUp);
-        spannableString.setSpan(
-                new RelativeSizeSpan(1.2f), txtUsrSignUp.length() -7, txtUsrSignUp.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-        );
-
-        txtUsrSignUp.setText(spannableString); */
+        txtUsrSignUp.setText(MessageFormat.format("{0}\n{1}", userGroup, page));
     }
 
     @Override
