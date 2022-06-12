@@ -122,8 +122,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
             if (Objects.equals(documentSnapshot.getString("userGroup"), "student")) {
                 // user is student
-                //startActivity(new Intent(getApplicationContext(), DocReqActivity.class));
-                //finish();
+                startActivity(new Intent(getApplicationContext(), DocReqActivity.class));
+                finish();
             }
         });
     }
@@ -137,8 +137,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onStart() {
         super.onStart();
-        if (FirebaseAuth.getInstance().getCurrentUser() !=null) {
-            startActivity(new Intent(getApplicationContext(),DocReqActivity.class));
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), StudentActivity.class));
             finish();
         }
     }

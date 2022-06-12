@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="50dp"
         android:fontFamily="@font/jetbrainsmono_bold"
         android:gravity="center"
         android:text="@string/document_request"
@@ -79,12 +79,25 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/btnDocRqstBack"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="35dp"
+        android:text="@string/back"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@id/btnDocRqstNext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteY="723dp" />
+
+    <Button
         android:id="@+id/btnDocRqstNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="35dp"
         android:text="@string/next"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"

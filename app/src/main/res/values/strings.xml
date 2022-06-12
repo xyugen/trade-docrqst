@@ -35,4 +35,6 @@
     <string name="app_logo">app logo</string>
     <string name="lrn">Learner\'s Reference Number</string>
     <string name="a_lrn">LRN</string>
+    <string name="rqstdoc_hint">Click to request documents</string>
+    <string name="c_rqstdoc">Request Documents</string>
 </resources>
