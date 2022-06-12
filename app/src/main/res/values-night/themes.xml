@@ -14,6 +14,8 @@
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/jetbrainsmono_regular</item>
         <item name="android:windowBackground">@drawable/background_dark</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
     </style>
 
 </resources>

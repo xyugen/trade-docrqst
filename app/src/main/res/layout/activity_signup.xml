@@ -109,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="15dp"
-        android:text="@string/c_next"
+        android:text="@string/c_sign_up"
         app:layout_constraintBottom_toTopOf="@+id/btnBackLogin"
         app:layout_constraintEnd_toEndOf="parent" />
 

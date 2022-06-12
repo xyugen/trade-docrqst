@@ -92,10 +92,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     DocumentReference df = fStore.collection("Users").document(user.getUid());
                     Map<String,Object> userInfo = new HashMap<>();
                     userInfo.put("LRN",edtLRN.getText().toString());
-                    userInfo.put("UserEmail",edtEmail.toString());
+                    userInfo.put("UserEmail",edtEmail.getText().toString());
 
-                    // specify of the user is admin/teacher
-                    userInfo.put("isTeacher","0");
+                    // specify of the user is student/teacher/admin
+                    userInfo.put("userGroup","student");
 
                     df.set(userInfo);
 
