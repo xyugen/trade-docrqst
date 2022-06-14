@@ -106,8 +106,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onStart() {
         super.onStart();
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), StudentActivity.class));
+        if (fAuth.getCurrentUser() != null) {
+            checkUserAccessLevel(fAuth.getCurrentUser().getUid());
             finish();
         }
     }
