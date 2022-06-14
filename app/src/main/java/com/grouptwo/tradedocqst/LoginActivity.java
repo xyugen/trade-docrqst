@@ -26,7 +26,7 @@ import java.util.Objects;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     // Creating buttons
-    Button btnLogin, btnBackLogin, btnSignUp, btnForgotPW;
+    Button btnLogin, btnSignUp, btnForgotPW;
     TextInputEditText edtEmail, edtPass;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -44,30 +44,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         edtEmail = findViewById(R.id.edtTxtLoginEmail);
         edtPass = findViewById(R.id.edtTxtLoginPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        btnBackLogin = findViewById(R.id.btnBackLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
         btnForgotPW = findViewById(R.id.btnForgotPasswd);
 
         // apply onClickListener to buttons
         btnLogin.setOnClickListener(this);
-        btnBackLogin.setOnClickListener(this);
         btnSignUp.setOnClickListener(this);
         btnForgotPW.setOnClickListener(this);
-
-        txtUserGroup();
-    }
-
-    private void txtUserGroup() {
-        SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
-        String userGroup = sessionManagement.getGroup();
-        String page = getResources().getString(R.string.c_login);
-
-        TextView txtUsrLogin = findViewById(R.id.txtUsrLogin);
-        txtUsrLogin.setText(MessageFormat.format("{0}\n{1}", userGroup, page));
-
-        if(!userGroup.equals("Student")){
-            btnSignUp.setVisibility(View.INVISIBLE);
-        }
     }
 
     @Override
@@ -77,9 +60,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if(id == R.id.btnLogin) {
             if (SignUpActivity.validate(edtEmail, false) && SignUpActivity.validate(edtPass, true)) {
-                fAuth.signInWithEmailAndPassword(edtEmail.getText().toString(),edtPass.getText().toString()).addOnSuccessListener(authResult -> {
+                fAuth.signInWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString()).addOnSuccessListener(authResult -> {
                     Toast.makeText(LoginActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
-                    checkUserAccessLevel(authResult.getUser().getUid());
+                    checkUserAccessLevel(Objects.requireNonNull(authResult.getUser()).getUid());
                 }).addOnFailureListener(e -> {
                 });
 

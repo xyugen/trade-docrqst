@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -48,17 +49,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         btnSUNext.setOnClickListener(this);
         btnBack.setOnClickListener(this);
         btnForgotPW.setOnClickListener(this);
-
-        txtUserGroup();
-    }
-
-    private void txtUserGroup() {
-        SessionManagement sessionManagement = new SessionManagement(SignUpActivity.this);
-        String userGroup = sessionManagement.getGroup();
-        String page = getResources().getString(R.string.c_sign_up);
-
-        TextView txtUsrSignUp = findViewById(R.id.txtUsrSignUp);
-        txtUsrSignUp.setText(MessageFormat.format("{0}\n{1}", userGroup, page));
     }
 
     public static boolean validate(TextInputEditText field, Boolean pw) {
@@ -86,12 +76,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         if(id == R.id.btnSUNext) {
             if (validate(edtLRN, false) && validate(edtEmail, false) && validate(edtPass, true)) {
                 // start the user registration process
-                fAuth.createUserWithEmailAndPassword(edtEmail.getText().toString(), edtPass.getText().toString()).addOnSuccessListener(authResult -> {
+                fAuth.createUserWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString()).addOnSuccessListener(authResult -> {
                     FirebaseUser user = fAuth.getCurrentUser();
                     Toast.makeText(SignUpActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
+                    assert user != null;
                     DocumentReference df = fStore.collection("Users").document(user.getUid());
                     Map<String,Object> userInfo = new HashMap<>();
-                    userInfo.put("LRN",edtLRN.getText().toString());
+                    userInfo.put("LRN", Objects.requireNonNull(edtLRN.getText()).toString());
                     userInfo.put("UserEmail",edtEmail.getText().toString());
 
                     // specify of the user is student/teacher/admin

@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:text="@string/user_login"
+        android:text="@string/c_login"
         android:textColor="?android:textColorPrimary"
         android:textSize="62sp"
         app:layout_constraintBottom_toTopOf="@+id/txtFldLoginEmail"
@@ -86,17 +86,6 @@
         android:text="@string/c_login"
         app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btnBackLogin"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="15dp"
-        android:text="@string/back"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
-        app:layout_constraintEnd_toStartOf="@id/btnLogin" />
 
     <Button
         android:id="@+id/btnSignUp"
