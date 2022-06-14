@@ -64,11 +64,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(LoginActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                     checkUserAccessLevel(Objects.requireNonNull(authResult.getUser()).getUid());
                 }).addOnFailureListener(e -> {
+                    Toast.makeText(LoginActivity.this, "Logged in failed.", Toast.LENGTH_SHORT).show();
                 });
-
-                Intent intent = new Intent(this, DocReqActivity.class);
-                startActivity(intent);
-                finish();
             }
         }
         else if(id == R.id.btnSignUp) {
@@ -90,17 +87,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             if(Objects.equals(documentSnapshot.getString("userGroup"), "admin")) {
                 // user is admin
-                //startActivity(new Intent(getApplicationContext(), Admin.class));
-                //finish();
+                startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                finish();
             }
             if(Objects.equals(documentSnapshot.getString("userGroup"), "teacher")) {
                 // user is teacher
-                //startActivity(new Intent(getApplicationContext(), Teacher.class));
+                //startActivity(new Intent(getApplicationContext(), TeacherActivity.class));
                 //finish();
             }
             if (Objects.equals(documentSnapshot.getString("userGroup"), "student")) {
                 // user is student
-                startActivity(new Intent(getApplicationContext(), DocReqActivity.class));
+                startActivity(new Intent(getApplicationContext(), StudentActivity.class));
                 finish();
             }
         });

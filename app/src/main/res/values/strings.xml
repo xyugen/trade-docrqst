@@ -37,4 +37,5 @@
     <string name="a_lrn">LRN</string>
     <string name="rqstdoc_hint">Click to request documents</string>
     <string name="c_rqstdoc">Request Documents</string>
+    <string name="c_log_out">Log out</string>
 </resources>

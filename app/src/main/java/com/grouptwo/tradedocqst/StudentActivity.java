@@ -6,28 +6,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class StudentActivity extends AppCompatActivity implements View.OnClickListener {
 
     // set elements
+    FirebaseAuth fAuth;
     Button btnRqstDoc;
-    ImageView imgAccDrawer;
+    ImageView imgMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
 
+        // firebase
+        fAuth = FirebaseAuth.getInstance();
+
         // connect buttons
         btnRqstDoc = findViewById(R.id.btnRqstDoc);
-        imgAccDrawer = findViewById(R.id.imgAccDrawer);
+        imgMenu = findViewById(R.id.imgMenu);
 
         // apply onClick listener
         btnRqstDoc.setOnClickListener(this);
-        imgAccDrawer.setOnClickListener(this);
+        imgMenu.setOnClickListener(this);
     }
 
     @Override
@@ -44,8 +53,19 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(new Intent(this, DocReqActivity.class));
             finish();
         }
-        if (id == R.id.imgAccDrawer) {
-
+        if (id == R.id.imgMenu) {
+            PopupMenu popupMenu = new PopupMenu(StudentActivity.this, v);
+            popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());
+            popupMenu.setOnMenuItemClickListener(menuItem -> {
+                if (menuItem.getItemId() == R.id.logout) {
+                    fAuth.signOut();
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                    return true;
+                }
+                return false;
+            });
+            popupMenu.show();
         }
     }
 }
