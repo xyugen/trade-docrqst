@@ -88,11 +88,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 finish();
             }
         }
-        else if(id == R.id.btnBackLogin){
-            sessionManagement.removeSession();
-
-            moveToUserSelect();
-        }
         else if(id == R.id.btnSignUp) {
             Intent intent = new Intent(this, SignUpActivity.class);
             startActivity(intent);
@@ -126,12 +121,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 finish();
             }
         });
-    }
-
-    private void moveToUserSelect() {
-        Intent intent = new Intent(LoginActivity.this, UserSelectActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
     }
 
     @Override
