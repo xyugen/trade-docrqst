@@ -38,4 +38,6 @@
     <string name="rqstdoc_hint">Click to request documents</string>
     <string name="c_rqstdoc">Request Documents</string>
     <string name="c_log_out">Log out</string>
+    <string name="c_reset_password">Reset Password</string>
+    <string name="n_app_name">SJDMNTS\nDocument Request</string>
 </resources>

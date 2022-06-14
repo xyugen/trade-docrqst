@@ -62,18 +62,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 fAuth.signInWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString()).addOnSuccessListener(authResult -> {
                     Toast.makeText(LoginActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                     checkUserAccessLevel(Objects.requireNonNull(authResult.getUser()).getUid());
-                }).addOnFailureListener(e -> {
-                    Toast.makeText(LoginActivity.this, "Logged in failed.", Toast.LENGTH_SHORT).show();
-                });
+                }).addOnFailureListener(e -> Toast.makeText(LoginActivity.this, "Logged in failed.", Toast.LENGTH_SHORT).show());
             }
         }
         else if(id == R.id.btnSignUp) {
-            Intent intent = new Intent(this, SignUpActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(this, SignUpActivity.class));
+            finish();
         }
         else if(id == R.id.btnForgotPasswd) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Clicked forgot pass!", Toast.LENGTH_SHORT);
-            toast.show();
+            startActivity(new Intent(this, ForgotPasswordActivity.class));
+            finish();
         }
     }
 

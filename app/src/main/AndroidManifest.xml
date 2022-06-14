@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TradeDocumentRequest">
         <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminActivity"
             android:exported="false" />
         <activity

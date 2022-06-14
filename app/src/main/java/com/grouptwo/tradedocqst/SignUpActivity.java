@@ -101,8 +101,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             finish();
         }
         else if(id == R.id.btnForgotPasswd) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Clicked forgot pass!", Toast.LENGTH_SHORT);
-            toast.show();
+            startActivity(new Intent(this, ForgotPasswordActivity.class));
+            finish();
         }
     }
 }
