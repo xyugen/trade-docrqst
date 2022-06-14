@@ -8,11 +8,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class StudentActivity extends AppCompatActivity implements View.OnClickListener {
 
     // set elements
     Button btnRqstDoc;
+    ImageView imgAccDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +23,11 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
 
         // connect buttons
         btnRqstDoc = findViewById(R.id.btnRqstDoc);
+        imgAccDrawer = findViewById(R.id.imgAccDrawer);
 
         // apply onClick listener
         btnRqstDoc.setOnClickListener(this);
+        imgAccDrawer.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +43,9 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
         if (id == R.id.btnRqstDoc) {
             startActivity(new Intent(this, DocReqActivity.class));
             finish();
+        }
+        if (id == R.id.imgAccDrawer) {
+
         }
     }
 }

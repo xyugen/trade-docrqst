@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-anydpi-v26/ic_docrqst_logo.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/docrqst_logo.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/ic_account_circle_24.xml" value="0.126" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.126" />
         <entry key="app/src/main/res/drawable/ic_docrqst_logo.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1535" />
@@ -18,7 +19,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.265625" />
-        <entry key="app/src/main/res/layout/activity_student.xml" value="0.23278985507246377" />
+        <entry key="app/src/main/res/layout/activity_student.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_ulogin.xml" value="0.2151268115942029" />
         <entry key="app/src/main/res/layout/activity_uselect.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.26458333333333334" />
