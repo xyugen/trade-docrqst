@@ -24,9 +24,6 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".UserSelectActivity"
-            android:exported="false" />
-        <activity
             android:name=".LoadingActivity"
             android:exported="true"
             android:noHistory="true">
