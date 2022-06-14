@@ -56,7 +56,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
 
         if(id == R.id.btnLogin) {
             if (SignUpActivity.validate(edtEmail, false) && SignUpActivity.validate(edtPass, true)) {
