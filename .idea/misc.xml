@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_teacher_icon.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1535" />
         <entry key="app/src/main/res/font/jetbrainsmono.xml" value="0.28425925925925927" />
+        <entry key="app/src/main/res/layout/activity_admin.xml" value="0.23278985507246377" />
         <entry key="app/src/main/res/layout/activity_docreq.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_loading.xml" value="0.2236842105263158" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
