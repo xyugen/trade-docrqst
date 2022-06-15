@@ -12,14 +12,68 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:gravity="center"
         android:text="@string/c_sign_up"
         android:textColor="?android:textColorPrimary"
         android:textSize="62sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtFldSignUpLRN"
+        app:layout_constraintBottom_toTopOf="@+id/txtFldSignUpFullName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFldSignUpFullName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="3dp"
+        android:hint="Full Name"
+        android:radius="30dp"
+        app:boxBackgroundColor="?colorSecondary"
+        app:boxStrokeColor="?colorPrimary"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtFldSignUpSection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtSignUpFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:textColorHint="#546E7A" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFldSignUpSection"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="3dp"
+        android:hint="Section"
+        android:radius="30dp"
+        app:boxBackgroundColor="?colorSecondary"
+        app:boxStrokeColor="?colorPrimary"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtFldSignUpLRN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/act_SignUpSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:maxLines="1"
+            android:textColorHint="#546E7A" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtFldSignUpLRN"
@@ -28,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="3dp"
         android:hint="@string/a_lrn"
         android:radius="30dp"
         app:boxBackgroundColor="?colorSecondary"
@@ -42,7 +96,7 @@
             android:id="@+id/edtTxtSignUpLRN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:maxLines="1"
             android:textColorHint="#546E7A" />
 
@@ -55,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="3dp"
         android:hint="@string/prompt_email"
         android:radius="30dp"
         app:boxBackgroundColor="?colorSecondary"

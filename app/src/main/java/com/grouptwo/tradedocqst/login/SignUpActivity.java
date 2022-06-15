@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -26,32 +29,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     // Creating elements
     Button btnSUNext, btnBack, btnForgotPW;
-    TextInputEditText edtLRN, edtEmail, edtPass;
+    TextInputLayout tilSection;
+    TextInputEditText edtFullName, edtLRN, edtEmail, edtPass;
+    AutoCompleteTextView actSection;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
-
-        // firebase
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
-
-        // connecting text fields and buttons
-        edtLRN = findViewById(R.id.edtTxtSignUpLRN);
-        edtEmail = findViewById(R.id.edtTxtSignUpEmail);
-        edtPass = findViewById(R.id.edtTxtSignUpPassword);
-        btnSUNext = findViewById(R.id.btnSUNext);
-        btnBack = findViewById(R.id.btnBackLogin);
-        btnForgotPW = findViewById(R.id.btnForgotPasswd);
-
-        // apply onClick Listener
-        btnSUNext.setOnClickListener(this);
-        btnBack.setOnClickListener(this);
-        btnForgotPW.setOnClickListener(this);
-    }
 
     public static boolean validate(TextInputEditText field, Boolean pw) {
         if (!pw) {
@@ -72,11 +54,93 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         return true;
     }
 
+    public static boolean validateEmail(TextInputEditText edtEmail) {
+        String email = Objects.requireNonNull(edtEmail.getText()).toString().trim();
+        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            return true;
+        } else {
+            edtEmail.setError("Invalid email address.");
+            return false;
+        }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_signup);
+
+        // firebase
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
+        // connecting text fields and buttons
+        tilSection = findViewById(R.id.txtFldSignUpSection);
+        actSection = findViewById(R.id.act_SignUpSection);
+        edtFullName = findViewById(R.id.edtTxtSignUpFullName);
+        edtLRN = findViewById(R.id.edtTxtSignUpLRN);
+        edtEmail = findViewById(R.id.edtTxtSignUpEmail);
+        edtPass = findViewById(R.id.edtTxtSignUpPassword);
+        btnSUNext = findViewById(R.id.btnSUNext);
+        btnBack = findViewById(R.id.btnBackLogin);
+        btnForgotPW = findViewById(R.id.btnForgotPasswd);
+
+        // apply onClick Listener
+        btnSUNext.setOnClickListener(this);
+        btnBack.setOnClickListener(this);
+        btnForgotPW.setOnClickListener(this);
+
+        // populate drop down
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.sections));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        actSection.setAdapter(myAdapter);
+    }
+
+    private boolean validateLRN(){
+        String val = Objects.requireNonNull(edtLRN.getText()).toString().trim();
+
+        if (val.isEmpty()){
+            edtLRN.setError("This field is required");
+            return false;
+        } else if (edtLRN.length() != 12){
+            edtLRN.setError("LRN must be 12 numbers long");
+            return false;
+        } else {
+            edtLRN.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateFullName(){
+        String val = Objects.requireNonNull(edtFullName.getText()).toString().trim();
+
+        if (val.isEmpty()){
+            edtFullName.setError("This field is required");
+            return false;
+        } else {
+            edtFullName.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateSection(){
+        String val = actSection.getText().toString().trim();
+
+        if (val.isEmpty()){
+            actSection.setError("This field is required");
+            return false;
+        } else {
+            actSection.setError(null);
+            return true;
+        }
+    }
+
     @Override
     public void onClick(View v) {
         int id = v.getId();
         if(id == R.id.btnSUNext) {
-            if (validate(edtLRN, false) && validateEmail(edtEmail) && validate(edtPass, true)) {
+            if (validateFullName() && validateSection() && validateLRN() && validateEmail(edtEmail) && validate(edtPass, true)) {
                 // start the user registration process
                 fAuth.createUserWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString()).addOnCompleteListener(authResult -> {
                     FirebaseUser user = fAuth.getCurrentUser();
@@ -92,8 +156,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         assert user != null;
                         DocumentReference df = fStore.collection("Users").document(user.getUid());
                         Map<String, Object> userInfo = new HashMap<>();
-                        userInfo.put("LRN", Objects.requireNonNull(edtLRN.getText()).toString());
-                        userInfo.put("UserEmail", edtEmail.getText().toString());
+                        userInfo.put("FullName", edtFullName.getText().toString().trim());
+                        userInfo.put("Section", actSection.getText().toString().trim());
+                        userInfo.put("LRN", Objects.requireNonNull(edtLRN.getText()).toString().trim());
+                        userInfo.put("UserEmail", edtEmail.getText().toString().trim());
 
                         // specify if the user is student/teacher/admin
                         userInfo.put("userGroup", "student");
@@ -114,16 +180,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         else if(id == R.id.btnForgotPasswd) {
             startActivity(new Intent(this, ForgotPasswordActivity.class));
             finish();
-        }
-    }
-
-    public static boolean validateEmail(TextInputEditText edtEmail) {
-        String email = Objects.requireNonNull(edtEmail.getText()).toString().trim();
-        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            return true;
-        } else {
-            edtEmail.setError("Invalid email address.");
-            return false;
         }
     }
 }

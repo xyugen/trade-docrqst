@@ -47,4 +47,20 @@
     <string name="members">Members</string>
     <string name="leader_name">Jorym Renz Arias</string>
     <string name="members_name">Chynna Swanne Bandolin\nJule Ashly-K Catarungan\nMarian Jade Gayanilo\nHelena Mae Gura\nDesserie Rivera</string>
+
+    <string-array name="sections">
+        <item>Amber</item>
+        <item>Aquamarine</item>
+        <item>Diamond</item>
+        <item>Emerald</item>
+        <item>Garnet</item>
+        <item>Onyx</item>
+        <item>Opal</item>
+        <item>Pearl</item>
+        <item>Peridot</item>
+        <item>Ruby</item>
+        <item>Sapphire</item>
+        <item>Topaz</item>
+        <item>Zircon</item>
+    </string-array>
 </resources>
