@@ -40,4 +40,6 @@
     <string name="c_log_out">Log out</string>
     <string name="c_reset_password">Reset Password</string>
     <string name="n_app_name">SJDMNTS\nDocument Request</string>
+    <string name="resend_email_verification">Resend email verification</string>
+    <string name="b_menu">Menu button</string>
 </resources>

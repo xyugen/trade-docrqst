@@ -7,6 +7,17 @@
     tools:context=".StudentActivity">
 
     <Button
+        android:id="@+id/btnVerifyEmail"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/resend_email_verification"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@id/btnRqstDoc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/btnRqstDoc"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
@@ -20,7 +31,7 @@
 
     <ImageView
         android:id="@+id/imgMenu"
-        android:contentDescription="Menu button"
+        android:contentDescription="@string/b_menu"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
