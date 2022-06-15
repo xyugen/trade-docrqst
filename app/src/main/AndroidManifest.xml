@@ -15,22 +15,22 @@
             android:name=".AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".login.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminActivity"
+            android:name=".users.AdminActivity"
             android:exported="false" />
         <activity
-            android:name=".StudentActivity"
+            android:name=".users.StudentActivity"
             android:exported="false" />
         <activity
             android:name=".DocReqActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".login.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".LoadingActivity"

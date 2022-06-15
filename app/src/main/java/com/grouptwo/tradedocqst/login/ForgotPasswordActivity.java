@@ -1,6 +1,5 @@
-package com.grouptwo.tradedocqst;
+package com.grouptwo.tradedocqst.login;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,13 +10,11 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.grouptwo.tradedocqst.R;
 
 import java.util.Objects;
-import java.util.regex.Pattern;
 
 public class ForgotPasswordActivity extends AppCompatActivity implements View.OnClickListener {
 

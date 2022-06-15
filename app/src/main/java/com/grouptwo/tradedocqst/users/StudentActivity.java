@@ -1,6 +1,5 @@
-package com.grouptwo.tradedocqst;
+package com.grouptwo.tradedocqst.users;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,10 +13,12 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.grouptwo.tradedocqst.AboutActivity;
+import com.grouptwo.tradedocqst.DocReqActivity;
+import com.grouptwo.tradedocqst.R;
+import com.grouptwo.tradedocqst.login.LoginActivity;
 
 import java.util.Objects;
 

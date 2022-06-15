@@ -1,8 +1,10 @@
-package com.grouptwo.tradedocqst;
+package com.grouptwo.tradedocqst.users;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.grouptwo.tradedocqst.R;
 
 public class AdminActivity extends AppCompatActivity {
 

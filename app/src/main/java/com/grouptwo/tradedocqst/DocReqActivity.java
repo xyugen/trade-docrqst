@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.grouptwo.tradedocqst.users.StudentActivity;
+
 public class DocReqActivity extends AppCompatActivity implements View.OnClickListener {
 
     // setting buttons

@@ -7,6 +7,8 @@ import android.view.animation.Transformation;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.grouptwo.tradedocqst.login.LoginActivity;
+
 public class ProgressBarAnimation extends Animation {
 
     private Context context;
