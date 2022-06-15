@@ -79,7 +79,10 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
             PopupMenu popupMenu = new PopupMenu(StudentActivity.this, v);
             popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());
             popupMenu.setOnMenuItemClickListener(menuItem -> {
-                if (menuItem.getItemId() == R.id.logout) {
+                if (menuItem.getItemId() == R.id.about) {
+                    startActivity(new Intent(getApplicationContext(), AboutActivity.class));
+                }
+                else if (menuItem.getItemId() == R.id.logout) {
                     fAuth.signOut();
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     finish();

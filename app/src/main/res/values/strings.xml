@@ -42,4 +42,9 @@
     <string name="n_app_name">SJDMNTS\nDocument Request</string>
     <string name="resend_email_verification">Resend email verification</string>
     <string name="b_menu">Menu button</string>
+    <string name="about_us">About Us</string>
+    <string name="c_leader">Leader</string>
+    <string name="members">Members</string>
+    <string name="leader_name">Jorym Renz Arias</string>
+    <string name="members_name">Chynna Swanne Bandolin\nJule Ashly-K Catarungan\nMarian Jade Gayanilo\nHelena Mae Gura\nDesserie Rivera</string>
 </resources>
