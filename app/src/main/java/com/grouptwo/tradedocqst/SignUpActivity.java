@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -78,7 +79,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         int id = v.getId();
         if(id == R.id.btnSUNext) {
-            if (validate(edtLRN, false) && validate(edtEmail, false) && validate(edtPass, true)) {
+            if (validate(edtLRN, false) && validateEmail(edtEmail) && validate(edtPass, true)) {
                 // start the user registration process
                 fAuth.createUserWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString()).addOnCompleteListener(authResult -> {
                     FirebaseUser user = fAuth.getCurrentUser();
@@ -116,6 +117,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         else if(id == R.id.btnForgotPasswd) {
             startActivity(new Intent(this, ForgotPasswordActivity.class));
             finish();
+        }
+    }
+
+    public static boolean validateEmail(TextInputEditText edtEmail) {
+        String email = Objects.requireNonNull(edtEmail.getText()).toString().trim();
+        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            return true;
+        } else {
+            edtEmail.setError("Invalid email address.");
+            return false;
         }
     }
 }

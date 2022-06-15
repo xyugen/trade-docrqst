@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         int id = v.getId();
 
         if(id == R.id.btnLogin) {
-            if (SignUpActivity.validate(edtEmail, false) && SignUpActivity.validate(edtPass, true)) {
+            if (SignUpActivity.validateEmail(edtEmail) && SignUpActivity.validate(edtPass, true)) {
                 fAuth.signInWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString()).addOnSuccessListener(authResult -> {
                     Toast.makeText(LoginActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                     checkUserAccessLevel(Objects.requireNonNull(authResult.getUser()).getUid());
