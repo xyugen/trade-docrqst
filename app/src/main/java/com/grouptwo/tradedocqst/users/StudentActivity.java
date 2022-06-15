@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.grouptwo.tradedocqst.AboutActivity;
-import com.grouptwo.tradedocqst.DocReqActivity;
+import com.grouptwo.tradedocqst.request.DocReqActivity;
 import com.grouptwo.tradedocqst.R;
 import com.grouptwo.tradedocqst.login.LoginActivity;
 

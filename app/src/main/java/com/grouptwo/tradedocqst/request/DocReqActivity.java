@@ -1,4 +1,4 @@
-package com.grouptwo.tradedocqst;
+package com.grouptwo.tradedocqst.request;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.grouptwo.tradedocqst.R;
 import com.grouptwo.tradedocqst.users.StudentActivity;
 
 public class DocReqActivity extends AppCompatActivity implements View.OnClickListener {

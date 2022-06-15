@@ -24,7 +24,7 @@
             android:name=".users.StudentActivity"
             android:exported="false" />
         <activity
-            android:name=".DocReqActivity"
+            android:name=".request.DocReqActivity"
             android:exported="false" />
         <activity
             android:name=".login.SignUpActivity"
