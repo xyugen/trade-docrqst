@@ -31,11 +31,11 @@
 
     <ImageView
         android:id="@+id/imgMenu"
-        android:contentDescription="@string/b_menu"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/b_menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_menu_24" />

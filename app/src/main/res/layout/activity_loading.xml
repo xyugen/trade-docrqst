@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@drawable/sjdmnts"
     android:backgroundTint="#4DFFFFFF"
     android:backgroundTintMode="src_over"
+    android:padding="16dp"
     tools:context=".LoadingActivity">
 
     <TextView
