@@ -2,6 +2,7 @@ package com.grouptwo.tradedocqst.users;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     AutoCompleteTextView actSection;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
+    FirebaseUser fUser;
     String uID;
 
     @Override
@@ -42,6 +44,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         // firebase
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+        fUser = fAuth.getCurrentUser();
         uID = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
 
         // connecting text fields and buttons
@@ -84,7 +87,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         map.put("FullName", Objects.requireNonNull(edtFullName.getText()).toString().trim());
         map.put("Section", actSection.getText().toString().trim());
         map.put("LRN", Objects.requireNonNull(edtLRN.getText()).toString().trim());
-        FirebaseUser fUser = fAuth.getCurrentUser();
 
         // update password
         assert fUser != null;
@@ -155,13 +157,39 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    private void checkUserAccessLevel(String uid) {
+        DocumentReference df = fStore.collection("Users").document(uid);
+        // extract the data from the document
+        df.get().addOnSuccessListener(documentSnapshot -> {
+            Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
+            // identify the user access level
+
+            if(Objects.equals(documentSnapshot.getString("userGroup"), "admin")) {
+                edtLRN.setVisibility(View.GONE);
+                actSection.setVisibility(View.GONE);
+                if(validateFullName() && validatePassword()){
+                    updateProfileData(uID);
+                }
+            }
+            if(Objects.equals(documentSnapshot.getString("userGroup"), "teacher")) {
+                edtLRN.setVisibility(View.GONE);
+                if(validateFullName() && validateSection() && validatePassword()){
+                    updateProfileData(uID);
+                }
+            }
+            if (Objects.equals(documentSnapshot.getString("userGroup"), "student")){
+                if(validateFullName() && validateLRN() && validateSection() && validatePassword()){
+                    updateProfileData(uID);
+                }
+            }
+        });
+    }
+
     @Override
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btnSave){
-            if(validateFullName() && validateLRN() && validateSection() && validatePassword()){
-                updateProfileData(uID);
-            }
+            checkUserAccessLevel(fUser.getUid());
         }
         else if (id == R.id.btnBack){
             onBackPressed();
