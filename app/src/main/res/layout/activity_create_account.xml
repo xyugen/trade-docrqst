@@ -98,7 +98,7 @@
             android:id="@+id/edtTxtCreateEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
             android:maxLines="1"
             android:textColorHint="#546E7A" />
 
@@ -146,7 +146,7 @@
         app:boxBackgroundColor="?colorSecondary"
         app:boxStrokeColor="?colorPrimary"
         app:boxStrokeWidth="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintBottom_toTopOf="@+id/btnCACreateAccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -161,7 +161,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnCACreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -179,6 +179,6 @@
         android:layout_marginBottom="24dp"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnSave" />
+        app:layout_constraintEnd_toStartOf="@id/btnCACreateAccount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

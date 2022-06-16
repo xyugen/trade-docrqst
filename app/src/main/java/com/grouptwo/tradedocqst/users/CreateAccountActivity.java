@@ -44,7 +44,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         edtPassword = findViewById(R.id.edtTxtCreatePassword);
         edtConfPassword = findViewById(R.id.edtTxtCreateConfPassword);
         actSection = findViewById(R.id.actCreateSection);
-        btnCreate = findViewById(R.id.btnCreateAccount);
+        btnCreate = findViewById(R.id.btnCACreateAccount);
         btnBack = findViewById(R.id.btnCABack);
 
         // firebase
@@ -126,7 +126,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         int id = view.getId();
         if (id == R.id.btnCABack){
             onBackPressed();
-        } else if (id == R.id.btnSave){
+        } else if (id == R.id.btnCACreateAccount){
             createUser();
         }
     }
