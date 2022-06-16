@@ -16,6 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.grouptwo.tradedocqst.users.AdminActivity;
 import com.grouptwo.tradedocqst.R;
 import com.grouptwo.tradedocqst.users.StudentActivity;
+import com.grouptwo.tradedocqst.users.TeacherActivity;
 
 import java.util.Objects;
 
@@ -86,8 +87,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
             if(Objects.equals(documentSnapshot.getString("userGroup"), "teacher")) {
                 // user is teacher
-                //startActivity(new Intent(getApplicationContext(), TeacherActivity.class));
-                //finish();
+                startActivity(new Intent(getApplicationContext(), TeacherActivity.class));
+                finish();
             }
             if (Objects.equals(documentSnapshot.getString("userGroup"), "student")) {
                 // user is student

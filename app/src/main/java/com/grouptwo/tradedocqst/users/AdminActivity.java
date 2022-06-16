@@ -15,8 +15,6 @@ import com.grouptwo.tradedocqst.AboutActivity;
 import com.grouptwo.tradedocqst.R;
 import com.grouptwo.tradedocqst.login.LoginActivity;
 
-import java.util.Objects;
-
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener {
 
     // setting up elements
