@@ -67,10 +67,10 @@
 
         <AutoCompleteTextView
             android:id="@+id/actCreateSection"
-            android:labelFor="@+id/txtFldCreateSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete"
+            android:labelFor="@+id/txtFldCreateSection"
             android:maxLines="1"
             android:textColorHint="#546E7A" />
 

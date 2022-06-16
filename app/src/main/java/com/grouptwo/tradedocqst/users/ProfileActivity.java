@@ -28,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     // setting up elements
     Button btnSave, btnBack;
-    TextInputLayout tilSection;
+    TextInputLayout tilLRN, tilSection;
     TextInputEditText edtFullName, edtLRN, edtPass;
     AutoCompleteTextView actSection;
     FirebaseAuth fAuth;
@@ -48,6 +48,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         uID = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
 
         // connecting text fields and buttons
+        tilLRN = findViewById(R.id.txtFldProfileLRN);
         tilSection = findViewById(R.id.txtFldProfileSection);
         actSection = findViewById(R.id.actProfileSection);
         edtFullName = findViewById(R.id.edtTxtProfileFullName);
@@ -69,6 +70,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         // get data then pass onto textfields
         getProfileData(uID);
+
+        // check user access level
+        checkUserAccessLevel(uID);
     }
 
     private void getProfileData(String uid) {
@@ -162,17 +166,31 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         // extract the data from the document
         df.get().addOnSuccessListener(documentSnapshot -> {
             Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
+
+            // identify the user access level
+            if(Objects.equals(documentSnapshot.getString("userGroup"), "admin")) {
+                tilLRN.setVisibility(View.GONE);
+                tilSection.setVisibility(View.GONE);
+            }
+            if(Objects.equals(documentSnapshot.getString("userGroup"), "teacher")) {
+                tilLRN.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    private void validateAll(String uid) {
+        DocumentReference df = fStore.collection("Users").document(uid);
+        // extract the data from the document
+        df.get().addOnSuccessListener(documentSnapshot -> {
+            Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
             // identify the user access level
 
             if(Objects.equals(documentSnapshot.getString("userGroup"), "admin")) {
-                edtLRN.setVisibility(View.GONE);
-                actSection.setVisibility(View.GONE);
                 if(validateFullName() && validatePassword()){
                     updateProfileData(uID);
                 }
             }
             if(Objects.equals(documentSnapshot.getString("userGroup"), "teacher")) {
-                edtLRN.setVisibility(View.GONE);
                 if(validateFullName() && validateSection() && validatePassword()){
                     updateProfileData(uID);
                 }
@@ -189,7 +207,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btnSave){
-            checkUserAccessLevel(fUser.getUid());
+            validateAll(uID);
         }
         else if (id == R.id.btnBack){
             onBackPressed();
