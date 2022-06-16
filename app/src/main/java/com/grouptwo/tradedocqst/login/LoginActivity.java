@@ -55,10 +55,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if(id == R.id.btnLogin) {
             if (SignUpActivity.validateEmail(edtEmail) && SignUpActivity.validate(edtPass, true)) {
-                fAuth.signInWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString()).addOnSuccessListener(authResult -> {
+                fAuth.signInWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString())
+                        .addOnSuccessListener(authResult -> {
                     Toast.makeText(LoginActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                     checkUserAccessLevel(Objects.requireNonNull(authResult.getUser()).getUid());
-                }).addOnFailureListener(e -> Toast.makeText(LoginActivity.this, "Logged in failed.", Toast.LENGTH_SHORT).show());
+                }).addOnFailureListener(e -> Toast.makeText(LoginActivity.this, "Log in failed.", Toast.LENGTH_SHORT).show());
             }
         }
         else if(id == R.id.btnSignUp) {
