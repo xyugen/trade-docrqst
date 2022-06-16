@@ -142,7 +142,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         if(id == R.id.btnSUNext) {
             if (validateFullName() && validateSection() && validateLRN() && validateEmail(edtEmail) && validate(edtPass, true)) {
                 // start the user registration process
-                fAuth.createUserWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString()).addOnCompleteListener(authResult -> {
+                fAuth.createUserWithEmailAndPassword(Objects.requireNonNull(edtEmail.getText()).toString(), Objects.requireNonNull(edtPass.getText()).toString())
+                        .addOnCompleteListener(authResult -> {
                     FirebaseUser user = fAuth.getCurrentUser();
                     if(authResult.isSuccessful()) {
 
@@ -150,13 +151,15 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                         FirebaseUser fUser = fAuth.getCurrentUser();
                         assert fUser != null;
-                        fUser.sendEmailVerification().addOnSuccessListener(aVoid -> Toast.makeText(getApplicationContext(), "Verification email has been sent.", Toast.LENGTH_LONG).show()).addOnFailureListener(e -> Log.d("TAG", "onFailure: Email not sent " + e.getMessage()));
+                        fUser.sendEmailVerification()
+                                .addOnSuccessListener(aVoid -> Toast.makeText(getApplicationContext(), "Verification email has been sent.", Toast.LENGTH_LONG).show())
+                                .addOnFailureListener(e -> Log.d("TAG", "onFailure: Email not sent " + e.getMessage()));
 
                         Toast.makeText(SignUpActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
                         assert user != null;
                         DocumentReference df = fStore.collection("Users").document(user.getUid());
                         Map<String, Object> userInfo = new HashMap<>();
-                        userInfo.put("FullName", edtFullName.getText().toString().trim());
+                        userInfo.put("FullName", Objects.requireNonNull(edtFullName.getText()).toString().trim());
                         userInfo.put("Section", actSection.getText().toString().trim());
                         userInfo.put("LRN", Objects.requireNonNull(edtLRN.getText()).toString().trim());
                         userInfo.put("UserEmail", edtEmail.getText().toString().trim());

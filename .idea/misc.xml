@@ -10,21 +10,24 @@
         <entry key="app/src/main/res/drawable/ic_admin_icon.xml" value="0.1145" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.126" />
         <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.126" />
+        <entry key="app/src/main/res/drawable/ic_baseline_person_add_24.xml" value="0.1145" />
         <entry key="app/src/main/res/drawable/ic_docrqst_logo.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1535" />
+        <entry key="app/src/main/res/drawable/ic_student_icon.xml" value="0.1145" />
         <entry key="app/src/main/res/drawable/ic_teacher_icon.xml" value="0.1535" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1535" />
         <entry key="app/src/main/res/font/jetbrainsmono.xml" value="0.28425925925925927" />
         <entry key="app/src/main/res/layout-v28/activity_about.xml" value="0.11979166666666667" />
         <entry key="app/src/main/res/layout/activity_about.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_admin.xml" value="0.23278985507246377" />
+        <entry key="app/src/main/res/layout/activity_admin.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_docreq.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_loading.xml" value="0.2236842105263158" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.18885869565217392" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_request.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_sign_up2.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.2" />

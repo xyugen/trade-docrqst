@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TradeDocumentRequest">
         <activity
+            android:name=".users.CreateAccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".users.ProfileActivity"
             android:exported="false" />
         <activity

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".users.CreateAccountActivity">
+
+    <TextView
+        android:id="@+id/txtUsrSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/create_new_account"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="62sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtFldCreateFullName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFldCreateFullName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="3dp"
+        android:hint="@string/full_name"
+        android:radius="30dp"
+        app:boxBackgroundColor="?colorSecondary"
+        app:boxStrokeColor="?colorPrimary"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtFldCreateSection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtCreateFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:textColorHint="#546E7A" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFldCreateSection"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="3dp"
+        android:hint="@string/c_section"
+        android:radius="30dp"
+        app:boxBackgroundColor="?colorSecondary"
+        app:boxStrokeColor="?colorPrimary"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtFldCreateEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/actCreateSection"
+            android:labelFor="@+id/txtFldCreateSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textAutoComplete"
+            android:maxLines="1"
+            android:textColorHint="#546E7A" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFldCreateEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="3dp"
+        android:hint="@string/prompt_email"
+        android:maxWidth="262dp"
+        android:radius="30dp"
+        app:boxBackgroundColor="?colorSecondary"
+        app:boxStrokeColor="?colorPrimary"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtFldCreatePassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtCreateEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColorHint="#546E7A" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFldCreatePassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="3dp"
+        android:hint="@string/prompt_password"
+        android:maxWidth="262dp"
+        android:radius="30dp"
+        app:boxBackgroundColor="?colorSecondary"
+        app:boxStrokeColor="?colorPrimary"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtFldCreateConfPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtCreatePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColorHint="#546E7A" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFldCreateConfPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="50dp"
+        android:hint="@string/prompt_confirm_password"
+        android:maxWidth="262dp"
+        android:radius="30dp"
+        app:boxBackgroundColor="?colorSecondary"
+        app:boxStrokeColor="?colorPrimary"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtCreateConfPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColorHint="#546E7A" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/c_create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnCABack"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSave" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

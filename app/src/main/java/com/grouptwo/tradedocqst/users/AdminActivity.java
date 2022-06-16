@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 
@@ -19,6 +20,7 @@ import java.util.Objects;
 public class AdminActivity extends AppCompatActivity implements View.OnClickListener {
 
     // setting up elements
+    Button btnCreateAcc;
     ImageView imgMenu;
     FirebaseAuth fAuth;
     FirebaseUser fUser;
@@ -33,9 +35,11 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         fUser = fAuth.getCurrentUser();
 
         // connect buttons
+        btnCreateAcc = findViewById(R.id.btnCreateAccount);
         imgMenu = findViewById(R.id.imgMenu);
 
         // apply onClick listener
+        btnCreateAcc.setOnClickListener(this);
         imgMenu.setOnClickListener(this);
 
     }
@@ -43,7 +47,11 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        if (id == R.id.imgMenu) {
+        if (id == R.id.btnCreateAccount) {
+            startActivity(new Intent(getApplicationContext(), CreateAccountActivity.class));
+            finish();
+        }
+        else if (id == R.id.imgMenu) {
             PopupMenu popupMenu = new PopupMenu(getApplicationContext(), view);
             popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());
             popupMenu.setOnMenuItemClickListener(menuItem -> {

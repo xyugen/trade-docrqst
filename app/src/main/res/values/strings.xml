@@ -53,6 +53,10 @@
     <string name="save">Save</string>
     <string name="c_request">Request</string>
     <string name="c_cancel">Cancel</string>
+    <string name="c_create">Create</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="create_an_account">Create an account</string>
 
     <string-array name="sections">
         <item>Amber</item>
