@@ -47,7 +47,10 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
             PopupMenu popupMenu = new PopupMenu(getApplicationContext(), view);
             popupMenu.getMenuInflater().inflate(R.menu.menu, popupMenu.getMenu());
             popupMenu.setOnMenuItemClickListener(menuItem -> {
-                if (menuItem.getItemId() == R.id.about) {
+                if (menuItem.getItemId() == R.id.profile){
+                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                }
+                else if (menuItem.getItemId() == R.id.about) {
                     startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 }
                 else if (menuItem.getItemId() == R.id.logout) {
