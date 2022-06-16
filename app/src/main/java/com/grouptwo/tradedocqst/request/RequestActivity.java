@@ -17,7 +17,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 import com.grouptwo.tradedocqst.R;
 import com.grouptwo.tradedocqst.login.SignUpActivity;
 import com.grouptwo.tradedocqst.users.StudentActivity;
@@ -112,6 +114,7 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
     private void requestDocuments() {
         assert fUser != null;
         DocumentReference df = fStore.collection("Users").document(fUser.getUid()).collection("Requests").document();
+        requestID(df.getId());
 
         Map<String, Object> docRequest = new HashMap<>();
         docRequest.put("FullName", Objects.requireNonNull(txtFullName.getText()).toString().trim());
@@ -136,5 +139,14 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
 
         startActivity(new Intent(getApplicationContext(), StudentActivity.class));
         finish();
+    }
+
+    private void requestID(String id) {
+        DocumentReference df = fStore.collection("RequestIDs").document(fUser.getUid());
+
+        Map<String, Object> docInfo = new HashMap<>();
+        docInfo.put("RequestIDs", FieldValue.arrayUnion(id));
+
+        df.set(docInfo, SetOptions.merge());
     }
 }
