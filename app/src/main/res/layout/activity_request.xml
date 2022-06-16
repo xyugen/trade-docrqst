@@ -49,6 +49,20 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/txtLRNCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/a_lrn"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLRN" />
+
+            <TextView
                 android:id="@+id/txtFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,7 +74,21 @@
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtLRN" />
+                app:layout_constraintTop_toBottomOf="@id/txtLRNCon" />
+
+            <TextView
+                android:id="@+id/txtFullNameCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/full_name"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtFullName" />
 
             <TextView
                 android:id="@+id/txtSection"
@@ -74,7 +102,21 @@
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtFullName" />
+                app:layout_constraintTop_toBottomOf="@id/txtFullNameCon" />
+
+            <TextView
+                android:id="@+id/txtSectionCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/c_section"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtSection" />
 
             <TextView
                 android:id="@+id/txtDocsRqstd"
@@ -88,7 +130,22 @@
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtSection" />
+                app:layout_constraintTop_toBottomOf="@id/txtSectionCon" />
+
+            <TextView
+                android:id="@+id/txtDocsRqstdCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="10dp"
+                android:text="@string/c_documents"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDocsRqstd" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

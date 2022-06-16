@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class RequestActivity extends AppCompatActivity implements View.OnClickListener {
 
     // setting elements
+    TextView txtLRN, txtFullName, txtSection, txtDocuments;
     Button btnRqstRequest, btnRqstCancel;
     ArrayList<String> documents;
     FirebaseAuth fAuth;
@@ -33,6 +35,10 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_request);
 
         // connecting elements
+        txtLRN = findViewById(R.id.txtLRNCon);
+        txtFullName = findViewById(R.id.txtFullNameCon);
+        txtSection = findViewById(R.id.txtSectionCon);
+        txtDocuments = findViewById(R.id.txtDocsRqstdCon);
         btnRqstRequest = findViewById(R.id.btnRqstRequest);
         btnRqstCancel = findViewById(R.id.btnRqstCancel);
 
@@ -50,7 +56,31 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         documents = docs.getStringArrayList("docs");
         Log.i("documentsHere", documents.toString());
         Toast.makeText(getApplicationContext(), documents.toString(), Toast.LENGTH_SHORT).show();
+
+        // show request data/receipt
+        getRequestData(fUser.getUid());
+        showDocumentsRequested();
     }
+
+    private void showDocumentsRequested() {
+        StringBuilder builder = new StringBuilder();
+        for (String docs : documents){
+            builder.append(docs).append("\n");
+        }
+        txtDocuments.setText(builder.toString());
+    }
+
+    private void getRequestData(String uid) {
+        DocumentReference df = fStore.collection("Users").document(uid);
+        // extract the data from the document
+        df.get().addOnSuccessListener(documentSnapshot -> {
+            Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
+            txtFullName.setText(documentSnapshot.getString("FullName"));
+            txtSection.setText(documentSnapshot.getString("Section"));
+            txtLRN.setText(documentSnapshot.getString("LRN"));
+        });
+    }
+
 
     @Override
     public void onClick(View view) {
