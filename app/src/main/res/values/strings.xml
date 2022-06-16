@@ -51,6 +51,8 @@
     <string name="c_documents">Documents</string>
     <string name="c_profile">Profile</string>
     <string name="save">Save</string>
+    <string name="c_request">Request</string>
+    <string name="c_cancel">Cancel</string>
 
     <string-array name="sections">
         <item>Amber</item>
