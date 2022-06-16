@@ -69,7 +69,7 @@
             android:id="@+id/actProfileSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none"
+            android:inputType="textAutoComplete"
             android:maxLines="1"
             android:textColorHint="#546E7A" />
 
