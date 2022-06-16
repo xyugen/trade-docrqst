@@ -47,6 +47,8 @@
     <string name="members">Members</string>
     <string name="leader_name">Jorym Renz Arias</string>
     <string name="members_name">Chynna Swanne Bandolin\nJule Ashly-K Catarungan\nMarian Jade Gayanilo\nHelena Mae Gura\nDesserie Rivera</string>
+    <string name="c_section">Section</string>
+    <string name="c_documents">Documents</string>
 
     <string-array name="sections">
         <item>Amber</item>
