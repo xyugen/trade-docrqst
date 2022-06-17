@@ -2,6 +2,7 @@ package com.grouptwo.tradedocqst.users;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -125,7 +126,8 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btnCABack){
-            onBackPressed();
+            startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+            finish();
         } else if (id == R.id.btnCACreateAccount){
             createUser();
         }
