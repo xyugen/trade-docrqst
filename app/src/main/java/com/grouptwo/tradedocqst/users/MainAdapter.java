@@ -3,6 +3,7 @@ package com.grouptwo.tradedocqst.users;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,11 +16,12 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
-
+    private RecyclerViewClickListener listener;
     ArrayList<String> dRequests;
 
-    public MainAdapter(ArrayList<String> requests) {
+    public MainAdapter(ArrayList<String> requests, RecyclerViewClickListener listener) {
         dRequests = requests;
+        this.listener = listener;
     }
 
     @NonNull
@@ -39,14 +41,22 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         return dRequests.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public interface RecyclerViewClickListener{
+        void onClick(View v, int position);
+    }
 
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView rqstID;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             rqstID = itemView.findViewById(R.id.rqstID);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            listener.onClick(view, getAdapterPosition());
         }
     }
 }

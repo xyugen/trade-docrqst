@@ -27,11 +27,13 @@ import com.grouptwo.tradedocqst.AboutActivity;
 import com.grouptwo.tradedocqst.request.DocReqActivity;
 import com.grouptwo.tradedocqst.R;
 import com.grouptwo.tradedocqst.login.LoginActivity;
+import com.grouptwo.tradedocqst.request.RequestActivity;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class StudentActivity extends AppCompatActivity implements View.OnClickListener {
+    private MainAdapter.RecyclerViewClickListener listener;
 
     // set elements
     FirebaseAuth fAuth;
@@ -94,14 +96,10 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
                             if (ds.exists()){
                                 requests = (ArrayList<String>) ds.get("RequestIDs");
                                 assert requests != null;
-                                Log.d("RQSTd", "requests: "+requests.toString());
+                                Log.d("RQSTd", "requests: "+requests);
 
                                 // recyclerview
-                                rvRequests.setHasFixedSize(true);
-                                mLayoutManager = new LinearLayoutManager(getApplicationContext());
-                                mAdapter = new MainAdapter(requests);
-                                rvRequests.setLayoutManager(mLayoutManager);
-                                rvRequests.setAdapter(mAdapter);
+                                setAdapter();
                             }
                         }
                     }
@@ -112,6 +110,26 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
                         Log.d("RQSTd", "error: "+e);
                     }
                 });
+    }
+
+    private void setAdapter() {
+        setOnClickListener();
+        rvRequests.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mAdapter = new MainAdapter(requests, listener);
+        rvRequests.setLayoutManager(mLayoutManager);
+        rvRequests.setAdapter(mAdapter);
+    }
+
+    private void setOnClickListener() {
+        listener = new MainAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent intent = new Intent(getApplicationContext(), RequestActivity.class);
+                intent.putExtra("rID", requests.get(position));
+                startActivity(intent);
+            }
+        };
     }
 
     /*private void checkUserRequests(String rID) {

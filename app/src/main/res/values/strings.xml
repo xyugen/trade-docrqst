@@ -57,6 +57,8 @@
     <string name="prompt_confirm_password">Confirm Password</string>
     <string name="create_new_account">Create new account</string>
     <string name="create_an_account">Create an account</string>
+    <string name="done">Done</string>
+    <string name="c_date_requested">Date Requested</string>
 
     <string-array name="sections">
         <item>Amber</item>
