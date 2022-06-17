@@ -28,6 +28,7 @@ import com.grouptwo.tradedocqst.request.DocReqActivity;
 import com.grouptwo.tradedocqst.R;
 import com.grouptwo.tradedocqst.login.LoginActivity;
 import com.grouptwo.tradedocqst.request.RequestActivity;
+import com.grouptwo.tradedocqst.request.RequestedActivity;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -77,14 +78,24 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
 
         // get requests
         requests();
-
-        // recyclerview
-        /*rvRequests.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new MainAdapter(requests);
-        rvRequests.setLayoutManager(mLayoutManager);
-        rvRequests.setAdapter(mAdapter);*/
     }
+
+    /* TODO: show only unreceived docs
+    private boolean showDocumentsDone(String rID) {
+        Task<DocumentSnapshot> df = fStore.collection("Users")
+                .document(fUser.getUid()).collection("Requests").document(rID).get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()){
+                            DocumentSnapshot ds = task.getResult();
+                            if (ds.exists()){
+                                boolean done = ds.getBoolean("Done");
+                            }
+                        }
+                    }
+                });
+    }*/
 
     private void requests() {
         Task<DocumentSnapshot> df = fStore.collection("RequestIDs").document(fUser.getUid()).get()
@@ -94,12 +105,13 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
                         if (task.isSuccessful()){
                             DocumentSnapshot ds = task.getResult();
                             if (ds.exists()){
-                                requests = (ArrayList<String>) ds.get("RequestIDs");
-                                assert requests != null;
-                                Log.d("RQSTd", "requests: "+requests);
+                                    requests = (ArrayList<String>) ds.get("RequestIDs");
+                                    // = ds.getBoolean("Done");
+                                    assert requests != null;
+                                    Log.d("RQSTd", "requests: "+requests);
 
-                                // recyclerview
-                                setAdapter();
+                                    // recyclerview
+                                    setAdapter();
                             }
                         }
                     }
@@ -125,7 +137,7 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
         listener = new MainAdapter.RecyclerViewClickListener() {
             @Override
             public void onClick(View v, int position) {
-                Intent intent = new Intent(getApplicationContext(), RequestActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RequestedActivity.class);
                 intent.putExtra("rID", requests.get(position));
                 startActivity(intent);
             }

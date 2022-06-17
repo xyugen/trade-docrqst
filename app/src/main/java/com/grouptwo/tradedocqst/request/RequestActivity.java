@@ -72,7 +72,6 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         // retrieve document data
         final Bundle docs = getIntent().getExtras();
         documents = docs.getStringArrayList("docs");
-        Log.i("documentsHere", documents.toString());
 
         // show request data/receipt
         getRequestData(fUser.getUid());
@@ -129,7 +128,7 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         docRequest.put("RequestDate", currentDate);
 
         // queued
-        docRequest.put("Done", 0);
+        docRequest.put("Done", false);
         Log.d("Requested", "Documents" + documents);
         Log.d("RequestDate", "Date" + currentDate);
 
